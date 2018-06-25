@@ -58,6 +58,7 @@ public class GetNearbyPlacesData extends AsyncTask<Object, String, String> {
             double lng = Double.parseDouble(googlePlace.get("lng"));
             String placeName = googlePlace.get("place_name");
             String vicinity = googlePlace.get("vicinity");
+            String photoref = googlePlace.get("photo_ref");
             LatLng latLng = new LatLng(lat, lng);
             if(placeName.charAt(0)=='S')
             {
@@ -69,6 +70,7 @@ public class GetNearbyPlacesData extends AsyncTask<Object, String, String> {
             PlacesListActivity.places.add(placeName);
             PlacesListActivity.vicinity.add(vicinity);
             PlacesListActivity.location.add(latLng);
+            PlacesListActivity.photoref.add(photoref);
             markerOptions.position(latLng);
             markerOptions.title(placeName + " : " + vicinity);
             mMap.addMarker(markerOptions);

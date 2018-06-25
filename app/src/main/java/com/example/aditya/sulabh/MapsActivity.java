@@ -40,7 +40,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     private GoogleMap mMap;
     double latitude,longitude;
-    private int PROXIMITY_RADIUS = 10000;
+    private int PROXIMITY_RADIUS = 50000;
     GoogleApiClient googleApiClient;
     Location mlastlocation;
     Marker mcurrentlocationmarker;

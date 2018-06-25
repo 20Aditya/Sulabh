@@ -4,7 +4,10 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 public class PlacesDetailsActivity extends AppCompatActivity {
 
@@ -15,7 +18,7 @@ public class PlacesDetailsActivity extends AppCompatActivity {
 
 
         String index = getIntent().getStringExtra(Utilities.Placeindex);
-        TextView textView = (TextView)findViewById(R.id.textView);
+        ImageView image = (ImageView) findViewById(R.id.image);
         TextView textView2 = (TextView)findViewById(R.id.textView2);
         TextView textView3 = (TextView)findViewById(R.id.textView3);
 
@@ -23,7 +26,9 @@ public class PlacesDetailsActivity extends AppCompatActivity {
         placelocation.setLatitude(PlacesListActivity.location.get(Integer.parseInt(index)).latitude);
         placelocation.setLongitude(PlacesListActivity.location.get(Integer.parseInt(index)).longitude);
 
-        textView.setText(PlacesListActivity.places.get(Integer.parseInt(index)));
+        if(!PlacesListActivity.photoref.get(Integer.parseInt(index)).equals("picture not available"))
+        Picasso.get().load("https://maps.googleapis.com/maps/api/place/photo?maxwidth=1000&photoreference=" +PlacesListActivity.photoref.get(Integer.parseInt(index))+"&key=AIzaSyDZY49-Bu4bVmEquIXPKhLxtoHUaWVc6Q8").into(image);
+
         textView2.setText(String.valueOf(placelocation.getLatitude()));
         textView3.setText( String.valueOf(placelocation.getLongitude()));
 

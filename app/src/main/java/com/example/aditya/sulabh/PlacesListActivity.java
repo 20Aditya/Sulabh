@@ -17,6 +17,7 @@ public class PlacesListActivity extends AppCompatActivity {
     ListView list;
     static ArrayList<String> places = new ArrayList<>();
     static ArrayList<Places> listitem = new ArrayList<>();
+    static ArrayList<String> photoref = new ArrayList<>();
     static ArrayList<String> vicinity = new ArrayList<>();
     static ArrayList<LatLng> location = new ArrayList<>();
 

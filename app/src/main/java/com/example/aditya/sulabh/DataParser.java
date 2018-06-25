@@ -57,6 +57,7 @@ public class DataParser {
         String latitude = "";
         String longitude = "";
         String reference = "";
+        String photo_ref = "";
 
         Log.d("getPlace", "Entered");
 
@@ -70,11 +71,23 @@ public class DataParser {
             latitude = googlePlaceJson.getJSONObject("geometry").getJSONObject("location").getString("lat");
             longitude = googlePlaceJson.getJSONObject("geometry").getJSONObject("location").getString("lng");
             reference = googlePlaceJson.getString("reference");
+            if(googlePlaceJson.has("photos")){
+            JSONArray photo = googlePlaceJson.getJSONArray("photos");
+
+            for(int i=0;i<photo.length();i++){
+            photo_ref = ((JSONObject)photo.get(i)).getString("photo_reference");
+            }}
+            else
+            {
+                photo_ref="picture not available";
+            }
+            Log.d("photo","Ref= " + photo_ref);
             googlePlaceMap.put("place_name", placeName);
             googlePlaceMap.put("vicinity", vicinity);
             googlePlaceMap.put("lat", latitude);
             googlePlaceMap.put("lng", longitude);
             googlePlaceMap.put("reference", reference);
+            googlePlaceMap.put("photo_ref",photo_ref);
             Log.d("getPlace", "Putting Places");
         } catch (JSONException e) {
             Log.d("getPlace", "Error");

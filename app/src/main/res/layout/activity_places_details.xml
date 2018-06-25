@@ -6,13 +6,13 @@
     android:layout_height="match_parent"
     tools:context="com.example.aditya.sulabh.PlacesDetailsActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="131dp"
+        android:layout_marginTop="15dp"
         tools:layout_editor_absoluteX="162dp"
         tools:layout_editor_absoluteY="104dp" />
 
@@ -20,7 +20,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView"
+        android:layout_below="@+id/image"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp" />
 
