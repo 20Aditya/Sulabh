@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.aditya.sulabh.PlacesDetailsActivity">
+    tools:context="com.example.aditya.sulabh.PlacesDetailsActivity"
+    android:fillViewport="true">
     <RelativeLayout
 
         android:layout_width="match_parent"
@@ -69,10 +70,8 @@
             android:id="@+id/ratingnumber"
             android:layout_width="25dp"
             android:layout_height="40dp"
-            android:layout_alignBottom="@+id/ratingBar"
             android:layout_alignTop="@+id/ratingBar"
-            android:layout_marginStart="14dp"
-            android:layout_toEndOf="@+id/ratingBar" />
+            android:layout_centerHorizontal="true" />
 
         <TextView
             android:id="@+id/textView5"
@@ -105,11 +104,11 @@
             android:id="@+id/ratingBar2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/ratingnumber"
+            android:layout_alignStart="@+id/textView2"
+            android:layout_below="@+id/rateus"
             android:scaleX="0.7"
             android:scaleY="0.7"
-            android:stepSize="1.0"
-            android:layout_below="@+id/rateus" />
+            android:stepSize="1.0" />
 
         <EditText
             android:id="@+id/editText"
@@ -140,6 +139,32 @@
             android:id="@+id/submit"
             android:layout_below="@id/editText2"
             android:layout_alignStart="@+id/reviewnumber"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Comments : "
+            android:textSize="18dp"
+            android:layout_below="@+id/submit"
+            android:id="@+id/comment"
+            android:layout_alignStart="@+id/image2"
+            android:layout_marginTop="5dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/comment"
+            android:layout_marginTop="7dp"
+            android:id="@+id/line"
+            android:background="@android:color/black" />
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/line"
+            android:id="@+id/comments-list"
+            android:layout_marginTop="10dp">
+        </ListView>
 
 
     </RelativeLayout>
